@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeicToJpg", "HeicToJpg.csproj", "{76874CBC-0304-47FE-84A5-1B098591FB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeicToJpg", "HeicToJpg.csproj", "{555E5E66-D369-4E3D-A229-1D1044A31F02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{76874CBC-0304-47FE-84A5-1B098591FB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76874CBC-0304-47FE-84A5-1B098591FB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76874CBC-0304-47FE-84A5-1B098591FB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76874CBC-0304-47FE-84A5-1B098591FB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555E5E66-D369-4E3D-A229-1D1044A31F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555E5E66-D369-4E3D-A229-1D1044A31F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555E5E66-D369-4E3D-A229-1D1044A31F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555E5E66-D369-4E3D-A229-1D1044A31F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2B9ED586-5911-420D-87E1-0C357FDC5A3E}
+		SolutionGuid = {C6AE1CF0-B5E7-405A-A9B5-B8D2440A8E78}
 	EndGlobalSection
 EndGlobal
