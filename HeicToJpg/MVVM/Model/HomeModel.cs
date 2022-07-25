@@ -51,9 +51,22 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
+        private double _progressBar;
+
+        public double ProgressBar
+        {
+            get { return _progressBar; }
+            set
+            {
+                _progressBar = value;
+                OnPropertyChanged();
+            }
+        }
+
         public RelayCommand SelectSourceFolder { get; set; }
         public RelayCommand SelectDestinationFolder { get; set; }
         public RelayCommand Convert { get; set; }
+
         private string SelectFolder()
         {
             CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog();
@@ -82,19 +95,22 @@ namespace HeicToJpg.MVVM.Model
                     {
                         image.Write(@$"{SelectedDestinationFolder}\\{info.Name.Split('.')[0]}.jpg");
                     }
-
-                    Content = $"{System.Convert.ToInt32(++procent / length * 100.0)}%";
+                    int p = System.Convert.ToInt32(++procent / length * 100.0);
+                    Content = $"Progress {p}%";
+                    ProgressBar = p * 8.8;
                 }
             }
             Thread.Sleep(100);
-            Content = "Convert";
+            Content = "Done";
+            ProgressBar = 0;
         }
 
         private void Default()
         {
             SelectedSourceFolder = "Click here to select source folder";
             SelectedDestinationFolder = "Click here to select\ndestination folder";
-            Content = "Convert";
+            Content = "Progress";
+            ProgressBar = 0;
         }
 
         public HomeModel()
