@@ -15,6 +15,8 @@ namespace HeicToJpg.MVVM.Model
 {
     internal class HomeModel : ObservableObject
     {
+        private bool cancel;
+
         private string _selectedSourceFolder;
 
         public string SelectedSourceFolder
@@ -39,14 +41,38 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private string _content;
+        private string _convertText;
 
-        public string Content
+        public string ConvertText
         {
-            get { return _content; }
+            get { return _convertText; }
             set
             {
-                _content = value;
+                _convertText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _stopText;
+
+        public string StopText
+        {
+            get { return _stopText; }
+            set
+            {
+                _stopText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _progressText;
+
+        public string ProgressText
+        {
+            get { return _progressText; }
+            set
+            {
+                _progressText = value;
                 OnPropertyChanged();
             }
         }
@@ -66,6 +92,7 @@ namespace HeicToJpg.MVVM.Model
         public RelayCommand SelectSourceFolder { get; set; }
         public RelayCommand SelectDestinationFolder { get; set; }
         public RelayCommand Convert { get; set; }
+        public RelayCommand Stop { get; set; }
 
         private string SelectFolder()
         {
@@ -84,32 +111,38 @@ namespace HeicToJpg.MVVM.Model
         {
             if (Directory.Exists(SelectedDestinationFolder) && Directory.Exists(SelectedSourceFolder))
             {
+                ConvertText = "Converting...";
                 string[] allfiles = Directory.GetFiles(SelectedSourceFolder, "*.heic", SearchOption.AllDirectories);
                 double procent = 0;
                 double length = allfiles.Length;
 
                 foreach (var file in allfiles)
                 {
+                    if (cancel) { break; }
                     FileInfo info = new FileInfo(file);
                     using (MagickImage image = new MagickImage(info.FullName))
                     {
                         image.Write(@$"{SelectedDestinationFolder}\\{info.Name.Split('.')[0]}.jpg");
                     }
                     int p = System.Convert.ToInt32(++procent / length * 100.0);
-                    Content = $"Progress {p}%";
-                    ProgressBar = p * 8.8;
+                    ProgressText = $"Progress {p}%";
+                    ProgressBar = p * 4.1;
                 }
             }
             Thread.Sleep(100);
-            Content = "Done";
+            ConvertText = "Convert";
+            ProgressText = cancel ? "Canceled" : "Done";
             ProgressBar = 0;
+            cancel = false;
         }
 
         private void Default()
         {
-            SelectedSourceFolder = "Click here to select source folder";
-            SelectedDestinationFolder = "Click here to select\ndestination folder";
-            Content = "Progress";
+            SelectedSourceFolder = "";
+            SelectedDestinationFolder = "";
+            ConvertText = "Convert";
+            StopText = "Stop";
+            ProgressText = "";
             ProgressBar = 0;
         }
 
@@ -130,6 +163,11 @@ namespace HeicToJpg.MVVM.Model
             Convert = new RelayCommand(o =>
             {
                 new Thread(o => ConvertImages()).Start();
+            });
+
+            Stop = new RelayCommand(o =>
+            {
+                cancel = true;
             });
         }
     }

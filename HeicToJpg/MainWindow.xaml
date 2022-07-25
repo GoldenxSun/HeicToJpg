@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HeicToJpg"
         xmlns:viewModel="clr-namespace:HeicToJpg.MVVM.ViewModel"
         mc:Ignorable="d"
-        Height="600" Width="920"
+        Height="400" Width="450"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
