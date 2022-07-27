@@ -1,5 +1,5 @@
 # HeicToJpg
-Convert heic file to jpg  
+
 
 **HeicToJpg** is an application that lets you convert .heic-files to jpg.
 You can select a source-folder where all heic files to be converted are located and a destination folder where all converted files are stored.
@@ -16,3 +16,4 @@ You can select a source-folder where all heic files to be converted are located 
 ## Screenshots
 
 ![Screenshot](.assets/Screenshot.PNG)
+![Conversion](.assets/Conversion.PNG)
