@@ -1,19 +1,36 @@
 # HeicToJpg
 
+**HeicToJpg** is a simple and efficient tool for converting `.heic` image files to `.jpg` format. Whether you're migrating photos from an iOS device or working with `.heic` images on your PC, this app makes conversion hassle-free with an intuitive user interface.
 
-**HeicToJpg** is an application that lets you convert .heic-files to jpg.
-You can select a source-folder where all heic files to be converted are located and a destination folder where all converted files are stored.
+## Key Features
 
-## Download
+- 🔄 **Batch Conversion**: Convert multiple `.heic` files to `.jpg` format in one go by selecting a source folder.
+- 🗂️ **Customizable Output**: Choose a destination folder where the converted `.jpg` files will be saved.
+- ⏸️ **Stop Functionality**: You can stop the conversion process at any time.
 
-- 🟢 **[First release](https://github.com/GoldenxSun/HeicToJpg/releases/tag/v2.2.0)**
+## How to Use
 
-## Features
-
-- Convert heic file to jpg
-- Stop conversion
+1. **Select Source Folder**: Choose the folder where all your `.heic` files are located.
+2. **Select Destination Folder**: Specify where the converted `.jpg` files should be saved.
+3. **Start Conversion**: Once both folders are selected, initiate the conversion process.
+4. **Stop Conversion**: If needed, stop the process midway with a single click.
 
 ## Screenshots
 
-![Screenshot](.assets/Screenshot.PNG)
-![Conversion](.assets/Conversion.PNG)
+Here’s a quick look at the application in action:
+
+![App Interface](.assets/Screenshot.PNG)
+*The main interface showing folder selection and conversion options.*
+
+![Conversion Progress](.assets/Conversion.PNG)
+*Live conversion progress in action.*
+
+## Installation
+
+You can download the latest version of HeicToJpg below:
+
+- 🟢 **[Download v2.2.0](https://github.com/GoldenxSun/HeicToJpg/releases/tag/v2.2.0)**
+
+---
+
+Feel free to contribute to the project by submitting issues, feature requests, or even code improvements!
