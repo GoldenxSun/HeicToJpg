@@ -10,9 +10,9 @@ namespace HeicToJpg.MVVM.ViewModel
 
         public HomeViewModel HomeVM { get; set; }
 
-        private object _currentView;
+        private object? _currentView;
 
-        public object CurrentView
+        public object? CurrentView
         {
             get { return _currentView; }
             set 

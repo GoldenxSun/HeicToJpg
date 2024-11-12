@@ -17,9 +17,9 @@ namespace HeicToJpg.MVVM.Model
     {
         private bool cancel;
 
-        private string _selectedSourceFolder;
+        private string? _selectedSourceFolder;
 
-        public string SelectedSourceFolder
+        public string? SelectedSourceFolder
         {
             get { return _selectedSourceFolder; }
             set
@@ -29,9 +29,9 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private string _selectedDestinationFolder;
+        private string? _selectedDestinationFolder;
 
-        public string SelectedDestinationFolder
+        public string? SelectedDestinationFolder
         {
             get { return _selectedDestinationFolder; }
             set
@@ -41,9 +41,9 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private string _convertText;
+        private string? _convertText;
 
-        public string ConvertText
+        public string? ConvertText
         {
             get { return _convertText; }
             set
@@ -53,9 +53,9 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private string _stopText;
+        private string? _stopText;
 
-        public string StopText
+        public string? StopText
         {
             get { return _stopText; }
             set
@@ -65,9 +65,9 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private string _progressText;
+        private string? _progressText;
 
-        public string ProgressText
+        public string? ProgressText
         {
             get { return _progressText; }
             set
@@ -77,9 +77,9 @@ namespace HeicToJpg.MVVM.Model
             }
         }
 
-        private double _progressBar;
+        private double? _progressBar;
 
-        public double ProgressBar
+        public double? ProgressBar
         {
             get { return _progressBar; }
             set

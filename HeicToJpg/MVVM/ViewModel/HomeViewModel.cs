@@ -9,9 +9,9 @@ namespace HeicToJpg.MVVM.ViewModel
 {
     internal class HomeViewModel
     {
-        private HomeModel _homeModel;
+        private HomeModel? _homeModel;
 
-        public HomeModel HomeModel
+        public HomeModel? HomeModel
         {
             get { return _homeModel; }
             set { _homeModel = value; }
